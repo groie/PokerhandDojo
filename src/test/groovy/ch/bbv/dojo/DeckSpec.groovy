@@ -7,7 +7,7 @@ import spock.lang.Specification
  */
 class DeckSpec extends Specification {
 
-    def "foobar"() {
+    def "should have 52 cards in deck"() {
         expect: Deck.deck.cardsLeftCount() == 52
 
     }

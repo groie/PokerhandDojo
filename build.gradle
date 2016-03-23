@@ -1,21 +1,14 @@
 buildscript {
-    ext.kotlin_version = '1.0.0'
     ext.groovy_version = '2.4.5'
 
     repositories {
         jcenter()
-    }
-
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 
 apply plugin: 'java'
 apply plugin: 'groovy'
-apply plugin: 'scala'
-apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -26,11 +19,8 @@ repositories {
 
 dependencies {
     compile "org.codehaus.groovy:groovy-all:$groovy_version"
-    compile 'org.scala-lang:scala-library:2.11.1'
 
-    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-    testCompile "org.scala-lang:scala-library:2.11.1"
     testCompile 'junit:junit:4.12'
 
 }
