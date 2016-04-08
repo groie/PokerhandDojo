@@ -1,6 +1,7 @@
 package ch.bbv.dojo.detector
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 import static ch.bbv.dojo.Hand.hand
 
@@ -17,7 +18,8 @@ class TwoPairDetectorTest extends Specification {
         new TwoPairDetector().is(hand)
     }
 
-    def "should not be two pairs"() {
+    @Unroll
+    def "#dealtHand should not have two pairs"() {
         expect:
         !new TwoPairDetector().is(dealtHand)
 
