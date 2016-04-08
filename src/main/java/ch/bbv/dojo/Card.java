@@ -19,9 +19,13 @@ public class Card implements Comparable<Card> {
         return value;
     }
 
+    public static Card card(String card) {
+        return new Card(Suite.of(card.substring(0,1)), CardValue.of(Integer.parseInt(card.substring(1))));
+    }
+
     @Override
     public String toString() {
-        return format("%s%s", suite.toString().charAt(0), value.toString().charAt(0));
+        return format("%s%s", suite.toString().charAt(0), value.getValue());
     }
 
     @Override
