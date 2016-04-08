@@ -2,7 +2,6 @@ package ch.bbv.dojo.detector;
 
 import ch.bbv.dojo.Card;
 import ch.bbv.dojo.CardValue;
-import scala.Int;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +10,7 @@ import java.util.Map;
 /**
  * Created by gro on 07/04/16.
  */
-public class PairDetector implements Detector {
+public class TwoPairDetector implements Detector {
 
     public boolean is(List<Card> hand) {
         Map<CardValue, Integer> matches = new HashMap<>();
@@ -19,6 +18,6 @@ public class PairDetector implements Detector {
             Integer count = matches.getOrDefault(card.getValue(), 0);
             matches.put(card.getValue(), count+1);
         }
-        return matches.values().stream().anyMatch(x -> x > 1);
+        return matches.values().stream().filter(x -> x > 1).count() == 2L;
     }
 }

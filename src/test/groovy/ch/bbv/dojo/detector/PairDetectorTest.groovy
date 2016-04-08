@@ -6,6 +6,7 @@ import ch.bbv.dojo.Suite
 import spock.lang.Specification
 
 import static ch.bbv.dojo.CardValue.*
+import static ch.bbv.dojo.Hand.hand
 import static ch.bbv.dojo.Suite.*
 
 /**
@@ -14,7 +15,7 @@ import static ch.bbv.dojo.Suite.*
 class PairDetectorTest extends Specification {
     def "Should be a pair"() {
         given:
-        def hand = [new Card(CLUBS, TWO), new Card(HEARTS, TWO), new Card(HEARTS, THREE), new Card(HEARTS, FOUR), new Card(CLUBS, ACE)]
+        def hand = hand("C2", "H2", "H4", "H7", "C13")
 
         expect:
         new PairDetector().is(hand)
@@ -22,7 +23,7 @@ class PairDetectorTest extends Specification {
 
     def "Should not be a pair"() {
         given:
-        def hand = [new Card(CLUBS, QUEEN), new Card(HEARTS, TWO), new Card(HEARTS, THREE), new Card(HEARTS, FOUR), new Card(CLUBS, ACE)]
+        def hand = hand("C12", "H2", "H4", "H7", "C13")
 
         expect:
         !new PairDetector().is(hand)
