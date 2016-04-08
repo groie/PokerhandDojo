@@ -1,13 +1,8 @@
 package ch.bbv.dojo.detector
 
-import ch.bbv.dojo.Card
-import ch.bbv.dojo.CardValue
-import ch.bbv.dojo.Suite
 import spock.lang.Specification
 
-import static ch.bbv.dojo.CardValue.*
 import static ch.bbv.dojo.Hand.hand
-import static ch.bbv.dojo.Suite.*
 
 /**
  * Created by gro on 07/04/16.
