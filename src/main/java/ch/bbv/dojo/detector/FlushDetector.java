@@ -1,6 +1,7 @@
 package ch.bbv.dojo.detector;
 
 import ch.bbv.dojo.Card;
+import ch.bbv.dojo.Suite;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
 public class FlushDetector implements Detector {
     @Override
     public boolean is(List<Card> hand) {
-        return hand.stream().allMatch(c -> c.getSuite() == hand.get(0).getSuite());
+        Suite suiteOfFirstCard = hand.get(0).getSuite();
+        return hand.stream().map(Card::getSuite).allMatch(suite -> suite == suiteOfFirstCard);
     }
 }
