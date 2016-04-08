@@ -19,6 +19,6 @@ public class PairDetector implements Detector {
             Integer count = matches.getOrDefault(card.getValue(), 0);
             matches.put(card.getValue(), count+1);
         }
-        return matches.values().stream().anyMatch(x -> x > 1);
+        return matches.values().stream().anyMatch(x -> x == 2);
     }
 }
