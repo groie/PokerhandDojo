@@ -25,7 +25,7 @@ public class Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-        return format("%s%s", suite.toString().charAt(0), value.getValue());
+        return format("%s%s", suite.toString().charAt(0), value.getIntVal());
     }
 
     @Override
