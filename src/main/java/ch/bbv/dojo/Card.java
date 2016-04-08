@@ -15,6 +15,10 @@ public class Card implements Comparable<Card> {
         this.value = cardValue;
     }
 
+    public Suite getSuite() {
+        return suite;
+    }
+
     public CardValue getValue() {
         return value;
     }
