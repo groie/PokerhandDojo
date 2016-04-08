@@ -2,7 +2,6 @@ package ch.bbv.dojo.detector;
 
 import ch.bbv.dojo.Card;
 import ch.bbv.dojo.CardValue;
-import scala.Int;
 
 import java.util.HashMap;
 import java.util.List;
