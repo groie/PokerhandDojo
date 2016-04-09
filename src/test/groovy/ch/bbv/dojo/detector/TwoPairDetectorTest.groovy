@@ -15,13 +15,13 @@ class TwoPairDetectorTest extends Specification {
         def hand = hand("C2", "H2", "H4", "H4", "C13")
 
         expect:
-        new TwoPairDetector().is(hand)
+        new TwoPairDetector(hand).is()
     }
 
     @Unroll
     def "#dealtHand should not have two pairs"() {
         expect:
-        !new TwoPairDetector().is(dealtHand)
+        !new TwoPairDetector(dealtHand).is()
 
         where:
         dealtHand << [

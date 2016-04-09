@@ -13,7 +13,7 @@ class PairDetectorTest extends Specification {
         def hand = hand("C2", "H2", "H4", "H7", "C13")
 
         expect:
-        new PairDetector().is(hand)
+        new PairDetector(hand).is()
     }
 
     def "Should not be a pair"() {
@@ -21,6 +21,6 @@ class PairDetectorTest extends Specification {
         def hand = hand("C12", "H2", "H4", "H7", "C13")
 
         expect:
-        !new PairDetector().is(hand)
+        !new PairDetector(hand).is()
     }
 }

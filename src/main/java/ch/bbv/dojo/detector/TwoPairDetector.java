@@ -13,7 +13,13 @@ import java.util.stream.Collectors;
  */
 public class TwoPairDetector implements Detector {
 
-    public boolean is(List<Card> hand) {
+    private final List<Card> hand;
+
+    public TwoPairDetector(List<Card> hand) {
+        this.hand = hand;
+    }
+
+    public boolean is() {
         Map<CardValue, Integer> matches = new HashMap<>();
         List<CardValue> cardValues = hand.stream().map(Card::getValue).collect(Collectors.toList());
         for (CardValue cv : cardValues) {

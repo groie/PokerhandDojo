@@ -11,8 +11,14 @@ import java.util.List;
  */
 public class StraightDetector implements Detector {
 
+    private final List<Card> hand;
+
+    public StraightDetector(List<Card> hand) {
+        this.hand = hand;
+    }
+
     @Override
-    public boolean is(List<Card> hand) {
+    public boolean is() {
 
         Boolean[] matches = new Boolean[CardValue.values().length+1];
         Arrays.fill(matches, false);

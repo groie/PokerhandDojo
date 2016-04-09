@@ -14,7 +14,7 @@ class FlushDetectorTest extends Specification {
         def hand = hand("C2", "C3", "C4", "C7", "C13")
 
         expect:
-        new FlushDetector().is(hand)
+        new FlushDetector(hand).is()
     }
 
     def "Should not be a flush"() {
@@ -22,6 +22,6 @@ class FlushDetectorTest extends Specification {
         def hand = hand("C12", "H2", "H4", "H7", "C13")
 
         expect:
-        !new FlushDetector().is(hand)
+        !new FlushDetector(hand).is()
     }
 }

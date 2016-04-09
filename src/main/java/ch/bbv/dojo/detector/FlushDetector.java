@@ -9,8 +9,15 @@ import java.util.List;
  * Created by gro on 08/04/16.
  */
 public class FlushDetector implements Detector {
+
+    private final List<Card> hand;
+
+    public FlushDetector(List<Card> hand) {
+        this.hand = hand;
+    }
+
     @Override
-    public boolean is(List<Card> hand) {
+    public boolean is() {
         Suite suiteOfFirstCard = hand.get(0).getSuite();
         return hand.stream().map(Card::getSuite).allMatch(suite -> suite == suiteOfFirstCard);
     }

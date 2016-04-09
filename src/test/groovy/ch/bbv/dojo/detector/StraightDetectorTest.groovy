@@ -14,7 +14,7 @@ class StraightDetectorTest extends Specification {
     def "#dealtHand should be a straight"() {
 
         expect:
-        new StraightDetector().is(dealtHand)
+        new StraightDetector(dealtHand).is()
 
         where:
         dealtHand << [
@@ -30,7 +30,7 @@ class StraightDetectorTest extends Specification {
     def "#dealtHand should not be a straight"() {
 
         expect:
-        !new StraightDetector().is(dealtHand)
+        !new StraightDetector(dealtHand).is()
 
         where:
         dealtHand << [

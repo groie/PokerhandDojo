@@ -12,7 +12,13 @@ import java.util.Map;
  */
 public class PairDetector implements Detector {
 
-    public boolean is(List<Card> hand) {
+    private final List<Card> hand;
+
+    public PairDetector(List<Card> hand) {
+        this.hand = hand;
+    }
+
+    public boolean is() {
         Map<CardValue, Integer> matches = new HashMap<>();
         for (Card card : hand) {
             Integer count = matches.getOrDefault(card.getValue(), 0);
@@ -20,4 +26,5 @@ public class PairDetector implements Detector {
         }
         return matches.values().stream().anyMatch(x -> x == 2);
     }
+
 }

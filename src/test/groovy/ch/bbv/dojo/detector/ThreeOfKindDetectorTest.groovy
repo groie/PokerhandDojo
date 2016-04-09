@@ -13,7 +13,7 @@ class ThreeOfKindDetectorTest extends Specification {
         def hand = hand("C2", "H2", "D2", "H7", "C13")
 
         expect:
-        new ThreeOfKindDetector().is(hand)
+        new ThreeOfKindDetector(hand).is()
     }
 
     def "Should not be three of kind"() {
@@ -21,6 +21,6 @@ class ThreeOfKindDetectorTest extends Specification {
         def hand = hand("C12", "H2", "H4", "H7", "C13")
 
         expect:
-        !new ThreeOfKindDetector().is(hand)
+        !new ThreeOfKindDetector(hand).is()
     }
 }

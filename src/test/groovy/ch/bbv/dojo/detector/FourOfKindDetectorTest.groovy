@@ -13,7 +13,7 @@ class FourOfKindDetectorTest extends Specification {
     @Unroll
     def "#dealtHand Should be four of kind "() {
         expect:
-        new FourOfKindDetector().is(dealtHand)
+        new FourOfKindDetector(dealtHand).is()
 
         where:
         dealtHand <<
@@ -29,7 +29,7 @@ class FourOfKindDetectorTest extends Specification {
         def hand = hand("C12", "H2", "H4", "H7", "C13")
 
         expect:
-        !new FourOfKindDetector().is(hand)
+        !new FourOfKindDetector(hand).is()
     }
 
 }
