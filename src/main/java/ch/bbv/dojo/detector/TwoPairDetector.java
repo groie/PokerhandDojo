@@ -2,6 +2,7 @@ package ch.bbv.dojo.detector;
 
 import ch.bbv.dojo.Card;
 import ch.bbv.dojo.CardValue;
+import ch.bbv.dojo.HandRank;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,5 +28,10 @@ public class TwoPairDetector implements Detector {
             matches.put(cv, count+1);
         }
         return matches.values().stream().filter(x -> x > 1).count() == 2;
+    }
+
+    @Override
+    public HandRank getHandRank() {
+        return HandRank.TwoPair;
     }
 }

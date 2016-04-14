@@ -2,6 +2,7 @@ package ch.bbv.dojo.detector;
 
 import ch.bbv.dojo.Card;
 import ch.bbv.dojo.CardValue;
+import ch.bbv.dojo.HandRank;
 
 import java.util.Arrays;
 import java.util.List;
@@ -45,5 +46,10 @@ public class StraightDetector implements Detector {
             if (count == 5) return true;
         }
         return false;
+    }
+
+    @Override
+    public HandRank getHandRank() {
+        return HandRank.Straight;
     }
 }

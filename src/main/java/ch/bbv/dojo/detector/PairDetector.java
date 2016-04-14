@@ -2,6 +2,7 @@ package ch.bbv.dojo.detector;
 
 import ch.bbv.dojo.Card;
 import ch.bbv.dojo.CardValue;
+import ch.bbv.dojo.HandRank;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +22,11 @@ public class PairDetector implements Detector {
     public boolean is() {
         Map<CardValue, Integer> matches = getCardValueIntegerMap();
         return matches.values().stream().anyMatch(x -> x == 2);
+    }
+
+    @Override
+    public HandRank getHandRank() {
+        return HandRank.Pair;
     }
 
     private Map<CardValue, Integer> getCardValueIntegerMap() {

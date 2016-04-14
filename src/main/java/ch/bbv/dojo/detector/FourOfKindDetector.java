@@ -2,6 +2,7 @@ package ch.bbv.dojo.detector;
 
 import ch.bbv.dojo.Card;
 import ch.bbv.dojo.CardValue;
+import ch.bbv.dojo.HandRank;
 
 import java.util.List;
 
@@ -26,5 +27,10 @@ public class FourOfKindDetector implements Detector {
         List<Card> second = hand.subList(1, 5);
         return  first.stream().allMatch(c -> c.getValue() == pivotCardValue) ||
                 second.stream().allMatch(c -> c.getValue() == pivotCardValue);
+    }
+
+    @Override
+    public HandRank getHandRank() {
+        return HandRank.FourOfKind;
     }
 }

@@ -1,6 +1,7 @@
 package ch.bbv.dojo.detector;
 
 import ch.bbv.dojo.Card;
+import ch.bbv.dojo.HandRank;
 
 import java.util.List;
 
@@ -20,5 +21,10 @@ public class FullHouseDetector implements Detector {
         ThreeOfKindDetector threeOfKind = new ThreeOfKindDetector(hand);
         PairDetector pair = new PairDetector(hand);
         return threeOfKind.is() && pair.is() && threeOfKind.tiebreakCard() != pair.tiebreakCard();
+    }
+
+    @Override
+    public HandRank getHandRank() {
+        return HandRank.FullHouse;
     }
 }

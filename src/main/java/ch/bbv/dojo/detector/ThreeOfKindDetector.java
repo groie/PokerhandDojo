@@ -2,6 +2,7 @@ package ch.bbv.dojo.detector;
 
 import ch.bbv.dojo.Card;
 import ch.bbv.dojo.CardValue;
+import ch.bbv.dojo.HandRank;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +23,11 @@ public class ThreeOfKindDetector implements Detector {
         Map<CardValue, Integer> matches = getCardValueIntegerMap();
 
         return matches.values().stream().anyMatch(x -> x == 3);
+    }
+
+    @Override
+    public HandRank getHandRank() {
+        return HandRank.ThreeOfKind;
     }
 
     private Map<CardValue, Integer> getCardValueIntegerMap() {
