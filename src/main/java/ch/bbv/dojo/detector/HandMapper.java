@@ -9,12 +9,12 @@ import java.util.List;
 /**
  * Created by gro on 14/04/16.
  */
-public class HandDetector {
+public class HandMapper {
 
     private final List<Detector> detectors = new ArrayList<>();
 
 
-    public HandDetector(List<Card> hand) {
+    public HandMapper(List<Card> hand) {
         detectors.add(new StraightFlushDetector(hand));
         detectors.add(new FourOfKindDetector(hand));
         detectors.add(new FullHouseDetector(hand));

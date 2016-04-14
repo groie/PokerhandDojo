@@ -9,12 +9,12 @@ import static ch.bbv.dojo.HandRank.*
 /**
  * Created by gro on 14/04/16.
  */
-class HandDetectorTest extends Specification {
+class HandMapperTest extends Specification {
 
     @Unroll
     def "#dealthand should be a #rank"() {
         expect:
-        new HandDetector(dealthand).getRank() == rank
+        new HandMapper(dealthand).getRank() == rank
 
         where:
         dealthand                           | rank
