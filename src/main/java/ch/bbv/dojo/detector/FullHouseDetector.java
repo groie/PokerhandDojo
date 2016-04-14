@@ -17,6 +17,8 @@ public class FullHouseDetector implements Detector {
 
     @Override
     public boolean is() {
-        return new ThreeOfKindDetector(hand).is() && new PairDetector(hand).is();
+        ThreeOfKindDetector threeOfKind = new ThreeOfKindDetector(hand);
+        PairDetector pair = new PairDetector(hand);
+        return threeOfKind.is() && pair.is() && threeOfKind.tiebreakCard() != pair.tiebreakCard();
     }
 }

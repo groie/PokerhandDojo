@@ -19,11 +19,24 @@ public class ThreeOfKindDetector implements Detector {
     }
 
     public boolean is() {
+        Map<CardValue, Integer> matches = getCardValueIntegerMap();
+
+        return matches.values().stream().anyMatch(x -> x == 3);
+    }
+
+    private Map<CardValue, Integer> getCardValueIntegerMap() {
         Map<CardValue, Integer> matches = new HashMap<>();
         for (Card card : hand) {
             Integer count = matches.getOrDefault(card.getValue(), 0);
             matches.put(card.getValue(), count+1);
         }
-        return matches.values().stream().anyMatch(x -> x == 3);
+        return matches;
+    }
+
+
+    public Card tiebreakCard() {
+        Map<CardValue, Integer> matches = getCardValueIntegerMap();
+        CardValue cv = matches.entrySet().stream().filter(x -> x.getValue() == 3).map(Map.Entry::getKey).findFirst().orElseThrow(RuntimeException::new);
+        return hand.stream().filter(c -> c.getValue() == cv).findFirst().orElseThrow(RuntimeException::new);
     }
 }
