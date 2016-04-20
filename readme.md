@@ -3,6 +3,7 @@
 
 ## Requirements
 
+* Java 8 SDK and $JAVA_HOME environment variable
 * Groovy SDK http://groovy-lang.org/install.html
 
 ## Running
