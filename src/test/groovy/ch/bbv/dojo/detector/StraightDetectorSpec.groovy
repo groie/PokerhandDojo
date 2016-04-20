@@ -8,7 +8,7 @@ import static ch.bbv.dojo.Hand.hand
 /**
  * Created by gro on 08/04/16.
  */
-class StraightDetectorTest extends Specification {
+class StraightDetectorSpec extends Specification {
 
     @Unroll
     def "#dealtHand should be a straight"() {

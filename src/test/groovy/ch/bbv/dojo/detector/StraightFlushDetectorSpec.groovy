@@ -7,7 +7,7 @@ import static ch.bbv.dojo.Hand.hand
 /**
  * Created by gro on 14/04/16.
  */
-class StraightFlushDetectorTest extends Specification {
+class StraightFlushDetectorSpec extends Specification {
 
     def "Should be a straight flush"() {
         given:

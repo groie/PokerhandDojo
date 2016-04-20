@@ -8,7 +8,7 @@ import static ch.bbv.dojo.Hand.hand
 /**
  * Created by gro on 08/04/16.
  */
-class FourOfKindDetectorTest extends Specification {
+class FourOfKindDetectorSpec extends Specification {
 
     @Unroll
     def "#dealtHand Should be four of kind "() {

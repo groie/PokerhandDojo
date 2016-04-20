@@ -8,7 +8,7 @@ import static ch.bbv.dojo.Hand.hand
 /**
  * Created by gro on 09/04/16.
  */
-class FullHouseDetectorTest extends Specification {
+class FullHouseDetectorSpec extends Specification {
     @Unroll
     def "#dealtHand Should be a full house  "() {
         expect:

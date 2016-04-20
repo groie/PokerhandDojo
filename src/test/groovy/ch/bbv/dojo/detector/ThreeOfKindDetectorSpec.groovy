@@ -7,7 +7,7 @@ import static ch.bbv.dojo.Hand.hand
 /**
  * Created by gro on 08/04/16.
  */
-class ThreeOfKindDetectorTest extends Specification {
+class ThreeOfKindDetectorSpec extends Specification {
     def "Should be three of kind "() {
         given:
         def hand = hand("C2", "H2", "D2", "H7", "C13")

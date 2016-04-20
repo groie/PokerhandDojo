@@ -7,7 +7,7 @@ import static ch.bbv.dojo.Hand.hand
 /**
  * Created by gro on 08/04/16.
  */
-class FlushDetectorTest extends Specification {
+class FlushDetectorSpec extends Specification {
 
     def "Should be a flush"() {
         given:

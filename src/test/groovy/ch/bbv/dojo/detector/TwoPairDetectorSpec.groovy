@@ -8,7 +8,7 @@ import static ch.bbv.dojo.Hand.hand
 /**
  * Created by gro on 07/04/16.
  */
-class TwoPairDetectorTest extends Specification {
+class TwoPairDetectorSpec extends Specification {
 
     def "should be two pairs"() {
         given:

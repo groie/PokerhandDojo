@@ -9,7 +9,7 @@ import static ch.bbv.dojo.HandRank.*
 /**
  * Created by gro on 14/04/16.
  */
-class HandMapperTest extends Specification {
+class HandMapperSpec extends Specification {
 
     @Unroll
     def "#dealthand should be a #rank"() {
